@@ -20,7 +20,7 @@
 
     <!--Main Style CSS-->
     <link rel="stylesheet" href="assets/css/style.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -134,7 +134,8 @@
             <div class="offcanvas-contact">
                 <h3 class="title">Contact Us</h3>
                 <ul class="contact-info">
-                    <li>Phone : +971 52 5748 480</li>
+                    <li>Phone : +971 52 744 7118</li>
+                    <li>Phone : +971 55 601 9719</li>
                     <li>Email : info@walltowall.info</li>
                     <li>Web: www.walltowall.info</li>
                 </ul>
@@ -150,6 +151,8 @@
     <!-- Widget Offcanvas Start  -->
 
     <!-- Offcanvas Menu Start  -->
+        
+<button onclick="topFunction()" id="ScrollBtn" title="Go to top">Top</button>
     <div id="offcanvas-mobile-menu" class="offcanvas-mobile-menu">
         <button class="close-btn" data-target="#offcanvas-mobile-menu">close</button>
         <div class="inner">
@@ -186,6 +189,8 @@
         </div>
     </div>
     <!-- Offcanvas Menu Start  -->
+        
+<button onclick="topFunction()" id="ScrollBtn" title="Go to top">Top</button>
 
     <!-- Page Header Section Start -->
     <div class="page-header-section contact-page section">
@@ -196,33 +201,69 @@
         </div>
     </div>
     <!-- Page Header Section End -->
+   <!-- Service Section Start -->
+   <div class="service-page-section section section-margin mb-0">
+    <div class="container">
+        <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 mb-0">
 
+            <div class="col mb-6">
+                <div class="service">
+                    <h5 class="title">PHONE :</h5>
+                    <p>+971 52 744 7118</p>
+                </div>
+            </div>
+
+            <div class="col mb-6">
+                <div class="service">
+                    <h5 class="title">PHONE :</h5>
+                    <p>+971 55 601 9719</p>
+                </div>
+            </div>
+
+            <div class="col mb-6">
+                <div class="service">
+                    <h5 class="title">EMAIL ID :</h5>
+                    <p>info@walltowall.info</p>
+                </div>
+            </div>
+
+            <div class="col mb-6">
+                <div class="service">
+                    <h5 class="title">WEBSITE :</h5>
+                    <p>www.walltowall.info</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Service Section End -->
     <!--Main Content Wrapper Start-->
     <div id="content-wrapper">
 
         <!-- Blog Section Start -->
-        <div class="blog-page-section section section-margin mb-0">
+        <div class="blog-page-section section section-margin mb-6">
             <div class="container">
                 <div class="contact-wrapper">
                     <h3 class="title">Write us</h3>
                     <div class="contact-form">
-                        <form class="comments-from contact-form-box" id="contact-form" action="https://zwin.io/html/WallToWall/mail.php" method="post">
+                        <form class="comments-from contact-form-box" id="ContactForm" >
                             <div class="row mb-n6">
                                 <div class="col-lg-6 col-12 mb-6">
                                     <div class="row mb-n6">
                                         <div class="col-12 mb-6">
                                             <label>Your Name Here</label>
-                                            <input type="text"  name="name" class="form-control" placeholder="Enter Your Name">
+                                            <input type="text" required  id="name" name="name" class="form-control" placeholder="Enter Your Name">
                                         </div>
                                         <div class="col-12 mb-6">
                                             <label>Your Email Here</label>
-                                            <input type="text" name="email" class="form-control" placeholder="Enter Your Email Address">
+                                            <input type="email" required id="email" name="email" class="form-control" placeholder="Enter Your Email Address">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12 mb-6">
                                     <label>Write text here</label>
-                                    <textarea name="message" class="form-control" placeholder="Enter Your Message Here"></textarea>
+                                    <textarea name="message" id="message" class="form-control" placeholder="Enter Your Message Here"></textarea>
                                 </div>
                                 <div class="col-lg-6 col-12 mb-6">
                                     <label>Verification</label>
@@ -232,7 +273,13 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12 mb-6">
-                                    <button class="btn" type="submit">SEND MESSAGE</button>
+                                    <button class="btn" type="submit" >
+                                        <h5 id="submit-txt"><b>Submit</b></h5>
+                                        <div class="spinner-border" id="submit-loading" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </button>
+                                    
                                 </div>
                                 <p class="form-messege mb-0"></p>
                             </div>
@@ -248,84 +295,28 @@
     <!--Main Content Wrapper End-->
 
     <!--Footer Area Start-->
-    <!-- Footer Start -->
-    <div class="footer-section section">
-
-        <!-- Footer Top Start -->
-        <div class="footer-top-section section">
-            <div class="container">
-                <div class="row mb-n6">
-
-                    <!-- Subscrube & Banner Widget Start -->
-                    <div class="col-xl-9 col-lg-8 col-12 mb-6">
-                        <div class="row mb-n6">
-
-                            <!-- Subscribe Widget Start -->
-                            <div class="col-12 mb-6">
-                                <h3 class="footer-subscribe-title">Subscribe Now</h3>
-                                <div class="footer-subscribe-form">
-                                    <form id="mc-form" class="mc-form">
-                                        <input id="mc-email" autocomplete="off" type="email" placeholder="Enter Your Email Address">
-                                        <button id="mc-submit" class="button" type="submit">Subscribe</button>
-                                    </form>
-                                    <div class="mailchimp-msg-submitting"></div><!-- mailchimp-submitting end -->
-                                    <div class="mailchimp-msg-success"></div><!-- mailchimp-success end -->
-                                    <div class="mailchimp-msg-error"></div><!-- mailchimp-error end -->
-                                </div>
-                            </div>
-                            <!-- Subscribe Widget End -->
-
-                        </div>
-                    </div>
-                    <!-- Subscrube & Banner Widget End -->
-
-                    <div class="col-12 mb-6">
-                        <div class="row justify-content-between mb-n6">
-
-                            <!-- Banner Widget Start -->
-                            <div class="col-lg-6 col-md-7 col-12 align-self-end mb-6">
-                                <div class="footer-banner-widget row mb-n6">
-
-                                    <div class="col-sm-6 mb-6"><a href="#"><img style="height: 300px;" src="assets/images/pexels-lucas-allmann-442540.jpg" alt="Footer Banner"></a></div>
-                                    <div class="col-sm-6 mb-6"><a href="#"><img style="height: 300px;" src="assets/images/gawk-exhibition-stand-1.jpg" alt="Footer Banner"></a></div>
-
-                                </div>
-                            </div>
-                            <!-- Banner Widget End -->
-
-                            <!-- Contact Widget Start -->
-                            <div class="col-lg-auto col-md-5 mb-6">
-                                <div class="footer-contact-widget">
-                                    <img class="logo" style="height: 100px;" src="assets/images/white-logo.png" alt="WallToWall">
-                                    <ul class="contact-info">
-                                        <li>Phone : <a href="#">+971 52 5748 480</a></li>
-                                        <li>Email : <a href="#">info@walltowall.info</a></li>
-                                        <li>Web: <a href="#">www.walltowall.info</a></li>
-                                    </ul>
-                                    <div class="social">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Contact Widget End -->
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-        <!-- Footer Top End -->
-
-        
-
-    </div>
-    <!-- Footer End -->
+   
     <!--Footer Area End-->
-
+    <script>
+        $("#ContactForm").submit((e)=>{
+            e.preventDefault()
+            document.getElementById("submit-txt").style.display="none"
+            document.getElementById("submit-loading").style.display="block"
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbw5NMskaKcBM3jcWQ7mJuAvgIq3smUz3eONyFK4lOnU7idOIXlFlY1xwExF2Mj3MM61AQ/exec",
+                data:$("#ContactForm").serialize(),
+                method:"post",
+                success:function (response){
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
     <!-- Ventor JS -->
     <script src="assets/js/vendors/modernizr-3.8.0.min.js"></script>
     <script src="assets/js/vendors/jquery-3.4.1.min.js"></script>
