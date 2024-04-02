@@ -21435,11 +21435,14 @@ textarea.form-control {
 /* Contact Wrapper */
 .contact-wrapper {
   padding: 100px 40px;
-  background-image: url(../images/pexels-jack-gittoes-761543.jpg);
+  background-image: url(../images/maxresdefault.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  background-color: rgba(48, 48, 48);
+  background-blend-mode: multiply;
 }
+
 
 .contact-wrapper .title {
   font-size: 36px;
