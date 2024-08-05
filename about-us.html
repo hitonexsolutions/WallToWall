@@ -737,7 +737,7 @@ $("#SubscribeForm").submit((e)=>{
     
     console.log("value: ",email);
     com = email.includes('.com')
-    if (name != "" && phone != null && email != ""){
+    if (email != ""){
         if (com == false){
             text = "Invalid Email."
             document.getElementById('error-alert').style.visibility = "visible"
