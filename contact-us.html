@@ -249,6 +249,8 @@
                     <div class="contact-form">
                         <form class="comments-from contact-form-box" id="ContactForm" >
                             <div class="row mb-n6">
+                                <div id="error-alert" style="visibility: hidden; opacity: 0; color: rgb(0, 0, 0);transition:visibility 1.5s linear,opacity 1.5s linear;" class="alert"></div>
+                        
                                 <div class="col-lg-6 col-12 mb-6">
                                     <div class="row mb-n6">
                                         <div class="col-12 mb-6">
@@ -297,11 +299,35 @@
     <!--Footer Area Start-->
    
     <!--Footer Area End-->
+
     <script>
-        $("#ContactForm").submit((e)=>{
-            e.preventDefault()
+        
+
+
+
+$("#ContactForm").submit((e)=>{
+    e.preventDefault()
+   
+    name = document.getElementById('name-page').value
+    email = document.getElementById('email-page').value
+    console.log('hi');
+    com = email.includes('.com')
+    if (name != "" && phone != null && email != ""){
+        if (com == false){
+            text = "Invalid Email."
+            document.getElementById('error-alert').style.visibility = "visible"
+            document.getElementById('error-alert').style.opacity = 1
+            document.getElementById('error-alert').innerHTML = text;
+            setTimeout(() => {
+                document.getElementById('error-alert').style.visibility = "hidden"
+                document.getElementById('error-alert').style.opacity = 0
+            }, 5000);
+        }
+        else{
+            
             document.getElementById("submit-txt").style.display="none"
-            document.getElementById("submit-loading").style.display="block"
+            document.getElementById('submit-loading').style.display="block"
+            console.log('succes');
             $.ajax({
                 url:"https://script.google.com/macros/s/AKfycbwLLxyodJVsz9QIuRAwB_TBzUMdQ0jH1oPD-z-ObwymHe3u4DXmxhM8k7jQqQeh0fEu/exec",
                 data:$("#ContactForm").serialize(),
@@ -311,11 +337,33 @@
                     //window.location.href="https://google.com"
                 },
                 error:function (err){
-                    alert("Something Error")
-    
+                    
+                    document.getElementById("submit-txt").style.display="block"
+                    document.getElementById('submit-loading').style.display="none"
+                    text = "Something Error."
+                    document.getElementById('error-alert').style.visibility = "visible"
+                    document.getElementById('error-alert').style.opacity = 1
+                    document.getElementById('error-alert').innerHTML = text;
+                    setTimeout(() => {
+                        document.getElementById('error-alert').style.visibility = "hidden"
+                        document.getElementById('error-alert').style.opacity = 0
+                    }, 5000);
                 }
             })
-        })
+        }
+    }
+    else{
+        text = "Sorry, the required fields cannot be left blank."
+        document.getElementById('error-alert').style.visibility = "visible"
+        document.getElementById('error-alert').style.opacity = 1
+        document.getElementById('error-alert').innerHTML = text;
+        setTimeout(() => {
+            document.getElementById('error-alert').style.visibility = "hidden"
+            document.getElementById('error-alert').style.opacity = 0
+        }, 5000);
+        }
+})
+   
     </script>
     <!-- Ventor JS -->
     <script src="assets/js/vendors/modernizr-3.8.0.min.js"></script>
