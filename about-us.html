@@ -735,7 +735,7 @@ $("#SubscribeForm").submit((e)=>{
    
     email = document.getElementById('mc-email').value
     
-    console.log(document.getElementById('mc-email').value);
+    console.log("value: ",email);
     com = email.includes('.com')
     if (name != "" && phone != null && email != ""){
         if (com == false){
