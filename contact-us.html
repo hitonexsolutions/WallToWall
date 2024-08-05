@@ -312,7 +312,7 @@ $("#ContactForm").submit((e)=>{
     email = document.getElementById('email').value
     console.log('hi');
     com = email.includes('.com')
-    if (name != "" && phone != null && email != ""){
+    if (name != "" &&  email != ""){
         if (com == false){
             text = "Invalid Email."
             document.getElementById('error-alert').style.visibility = "visible"
