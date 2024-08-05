@@ -736,7 +736,7 @@ $("#SubscribeForm").submit((e)=>{
     email = document.getElementById('mc-email').value
     
     console.log("value: ",email);
-    com = email.includes('.com')
+    com = email.includes('.com','.info')
     if (email != ""){
         if (com == false){
             text = "Invalid Email."
