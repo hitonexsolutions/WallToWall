@@ -429,7 +429,8 @@
                                 <h3 class="footer-subscribe-title">Subscribe Now</h3>
                                 <div class="footer-subscribe-form">
                                     <form id="SubscribeForm" class="mc-form">
-                                        <input id="mc-email" autocomplete="off" name="email" type="email" placeholder="Enter Your Email Address">
+                                       <div id="error-alert" style="visibility: hidden; opacity: 0; color: rgb(0, 0, 0);transition:visibility 1.5s linear,opacity 1.5s linear;" class="alert"></div>
+                         <input id="mc-email" autocomplete="off" name="email" type="email" placeholder="Enter Your Email Address">
                                         <button id="mc-submit" class="button" type="submit" >
                                             <h5 id="submit-txt"><b>Subscribe</b></h5>
                                             <div class="spinner-border" id="submit-loading" role="status">
@@ -497,13 +498,37 @@
     <!-- Footer End -->
     <!--Footer Area End-->
     <!-- Ventor JS -->
-      <script>
-        $("#SubscribeForm").submit((e)=>{
-            e.preventDefault()
+    
+    <script>
+        
+
+
+
+$("#SubscribeForm").submit((e)=>{
+    e.preventDefault()
+   
+    email = document.getElementById('mc-email').value
+    
+    console.log("value: ",email);
+    com = email.includes('.com')
+    if (email != ""){
+        if (com == false){
+            text = "Invalid Email."
+            document.getElementById('error-alert').style.visibility = "visible"
+            document.getElementById('error-alert').style.opacity = 1
+            document.getElementById('error-alert').innerHTML = text;
+            setTimeout(() => {
+                document.getElementById('error-alert').style.visibility = "hidden"
+                document.getElementById('error-alert').style.opacity = 0
+            }, 5000);
+        }
+        else{
+            
             document.getElementById("submit-txt").style.display="none"
-            document.getElementById("submit-loading").style.display="block"
+            document.getElementById('submit-loading').style.display="block"
+            console.log('succes');
             $.ajax({
-                url:"https://script.google.com/macros/s/AKfycbwLLxyodJVsz9QIuRAwB_TBzUMdQ0jH1oPD-z-ObwymHe3u4DXmxhM8k7jQqQeh0fEu/exec",
+                url:"https://script.google.com/macros/s/AKfycbwO90eSUmJ47or2nrUd_HaaT-olARRAPBigIVXzULI7kIbyJe7IgO7vibwrpygfA2ZA/exec",
                 data:$("#SubscribeForm").serialize(),
                 method:"post",
                 success:function (response){
@@ -511,11 +536,33 @@
                     //window.location.href="https://google.com"
                 },
                 error:function (err){
-                    alert("Something Error")
-    
+                    
+                    document.getElementById("submit-txt").style.display="block"
+                    document.getElementById('submit-loading').style.display="none"
+                    text = "Something Error."
+                    document.getElementById('error-alert').style.visibility = "visible"
+                    document.getElementById('error-alert').style.opacity = 1
+                    document.getElementById('error-alert').innerHTML = text;
+                    setTimeout(() => {
+                        document.getElementById('error-alert').style.visibility = "hidden"
+                        document.getElementById('error-alert').style.opacity = 0
+                    }, 5000);
                 }
             })
-        })
+        }
+    }
+    else{
+        text = "Sorry, the required fields cannot be left blank."
+        document.getElementById('error-alert').style.visibility = "visible"
+        document.getElementById('error-alert').style.opacity = 1
+        document.getElementById('error-alert').innerHTML = text;
+        setTimeout(() => {
+            document.getElementById('error-alert').style.visibility = "hidden"
+            document.getElementById('error-alert').style.opacity = 0
+        }, 5000);
+        }
+})
+   
     </script>
 
     <script src="../assets/js/vendors/modernizr-3.8.0.min.js"></script>
