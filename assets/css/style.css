@@ -23676,7 +23676,7 @@ textarea.form-control {
   position: absolute;
   z-index: -1;
   top: -170px;
-  right: 15px;
+  right: -25px;
   display: block;
   width: 416px;
   height: 410px;
@@ -23685,8 +23685,8 @@ textarea.form-control {
 
 @media only screen and (min-width: 1450px) and (max-width: 1599px) {
   .slider1-shape {
-    width: 330px;
-    height: 397px;
+    width: 360px;
+    height: 400px;
   }
 }
 
