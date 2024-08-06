@@ -24316,8 +24316,8 @@ textarea.form-control {
 .slider2-static-content-wrapper .content {
   position: absolute;
   z-index: 5;
-  top: 50%;
-  left: 74px;
+  top: 45%;
+  left: 124px;
   max-width: 380px;
   -webkit-transform: translateY(-25%);
       -ms-transform: translateY(-25%);
