@@ -26686,7 +26686,7 @@ textarea.form-control {
 
 
 .gallery-slider img { 
-  filter: brightness(0.25);
+  filter: brightness(0.50);
  }
 
  #submit-loading {
