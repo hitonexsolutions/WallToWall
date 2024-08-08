@@ -19354,9 +19354,6 @@ textarea.form-control {
   background-image: url(../images/page-header/checkout.jpg);
 }
 
-.page-header-section.contact-page {
-  background-image: url(../images/page-header/contact.jpg);
-}
 
 @media only screen and (min-width: 1200px) and (max-width: 1449px), only screen and (min-width: 992px) and (max-width: 1199px) {
   .page-header-section {
@@ -21435,7 +21432,7 @@ textarea.form-control {
 /* Contact Wrapper */
 .contact-wrapper {
   padding: 100px 40px;
-  background-image: url(../images/maxresdefault.jpg);
+  background-image: url(../images/181f0a11d22d425275a32eb57337a068.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
